@@ -333,6 +333,9 @@
       initialJs,
       '  var parsonsPuzzle = new ParsonsWidget(' + options + ');',
       '  parsonsPuzzle.init(initial);',
+      '  parsonsPuzzle.options.permutation = function(n) {',
+      '  return commentsFirst(initial.split("\n"));',
+      '};',
       '  parsonsPuzzle.shuffleLines();',
       events
     ].join('\n');
@@ -379,6 +382,9 @@
 
       parsonsPuzzle = new ParsonsWidget(settings.options);
       parsonsPuzzle.init(settings.initial);
+      parsonsPuzzle.options.permutation = function(n) {
+            return commentsFirst(initial.split("\n"));',
+      };
       parsonsPuzzle.shuffleLines();
     }
 
